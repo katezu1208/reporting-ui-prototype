@@ -16,7 +16,7 @@ body {
 
 .app {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 340px 1fr;
   min-height: 100vh;
 }
 
@@ -26,7 +26,7 @@ body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .sidebar-header {
@@ -89,49 +89,37 @@ button.danger {
   background: #fff5f3;
 }
 
-.group-card {
-  border: 1px solid #e3e7f1;
-  border-radius: 14px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
+.table-row {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 1.2fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid #edf0f6;
+  font-size: 14px;
   gap: 8px;
-  background: #fbfcff;
 }
 
-.group-card.active {
-  border-color: #2f5bff;
-  box-shadow: 0 10px 24px rgba(47, 91, 255, 0.15);
-}
-
-.group-title {
+.table-header {
+  background: #f5f7fb;
   font-weight: 600;
+  color: #516179;
 }
 
-.group-meta {
-  font-size: 13px;
-  color: #6b7891;
+.group-table {
+  border: 1px solid #e3e7f1;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.group-actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.action-links {
+  color: #2f5bff;
 }
 
 .migration {
   border-top: 1px dashed #d7deeb;
   padding-top: 16px;
   color: #58657d;
-}
-
-.migration ul {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
-  display: grid;
-  gap: 8px;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .content {
@@ -157,9 +145,14 @@ button.danger {
   flex-wrap: wrap;
 }
 
+.header-subtitle {
+  color: #6b7891;
+  font-size: 14px;
+}
+
 .group-body {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 24px;
   margin-top: 24px;
 }
@@ -180,16 +173,51 @@ button.danger {
   align-items: center;
 }
 
-.views ul {
+.group-list {
+  display: grid;
+  gap: 16px;
+}
+
+.group-block {
+  display: grid;
+  gap: 10px;
+}
+
+.group-block ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 18px;
   display: grid;
+  gap: 6px;
+}
+
+.group-row {
+  display: flex;
+  align-items: center;
   gap: 8px;
+  font-weight: 600;
+}
+
+.caret {
+  font-size: 12px;
+  color: #63728c;
+}
+
+.pill {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e9efff;
+  color: #2f5bff;
+}
+
+.pill.muted {
+  background: #f3f4f6;
+  color: #7c879c;
 }
 
 .view-item {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-radius: 10px;
   background: #f3f5f9;
   color: #4b576c;
@@ -201,38 +229,12 @@ button.danger {
   font-weight: 600;
 }
 
-.view-actions {
-  display: grid;
-  gap: 8px;
-  border-top: 1px solid #edf0f6;
-  padding-top: 12px;
-}
-
-.view-actions-title {
-  font-weight: 600;
-}
-
-.move-panel,
-.reorder {
-  border-top: 1px solid #edf0f6;
-  padding-top: 12px;
-  display: grid;
-  gap: 8px;
-  font-size: 14px;
-  color: #4b576c;
-}
-
-.move-panel label {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.drag-item {
-  border: 1px dashed #cbd5e1;
-  border-radius: 10px;
+.add-item {
   padding: 8px 12px;
-  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px dashed #c7d2fe;
+  color: #2f5bff;
+  background: #f8f9ff;
 }
 
 .view-content {
@@ -250,54 +252,40 @@ button.danger {
   align-items: center;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+.view-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.card {
-  background: #f5f7fb;
+.empty-state {
+  border: 1px dashed #d7deeb;
   border-radius: 14px;
-  padding: 16px;
+  padding: 24px;
+  background: #f9fbff;
   display: grid;
   gap: 8px;
 }
 
-.metric {
-  font-weight: 600;
-  color: #2f5bff;
+.empty-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.table {
-  border: 1px solid #edf0f6;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.table-header,
-.table-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  padding: 12px 16px;
-}
-
-.table-header {
-  background: #f5f7fb;
-  font-weight: 600;
-  color: #516179;
-}
-
-.table-row {
+.move-panel {
   border-top: 1px solid #edf0f6;
+  padding-top: 12px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: #4b576c;
 }
 
-.positive {
-  color: #1f9d55;
-}
-
-.negative {
-  color: #d64541;
+.move-panel label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 @media (max-width: 960px) {
