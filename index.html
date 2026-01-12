@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reporting UI Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="badge">Reporting</span>
+          <h1>Groups</h1>
+          <button class="primary">+ New group</button>
+        </div>
+        <div class="group-card active">
+          <div class="group-title">Performance Overview</div>
+          <div class="group-meta">4 views · Updated today</div>
+          <div class="group-actions">
+            <button>Open</button>
+            <button>Share</button>
+            <button>Duplicate</button>
+          </div>
+        </div>
+        <div class="group-card">
+          <div class="group-title">Awareness &amp; Reach</div>
+          <div class="group-meta">3 views · Updated yesterday</div>
+          <div class="group-actions">
+            <button>Open</button>
+            <button>Share</button>
+            <button>Duplicate</button>
+          </div>
+        </div>
+        <div class="group-card">
+          <div class="group-title">Ecommerce Deep Dive</div>
+          <div class="group-meta">6 views · Updated 3 days ago</div>
+          <div class="group-actions">
+            <button>Open</button>
+            <button>Share</button>
+            <button>Duplicate</button>
+          </div>
+        </div>
+        <div class="migration">
+          <h2>MVP migration state</h2>
+          <p>Auto-created groups for first access.</p>
+          <ul>
+            <li><strong>Dashboard Views</strong> · All existing dashboards</li>
+            <li><strong>Data Exploration Views</strong> · All exploration views</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <button class="ghost">← Back to Reporting Home</button>
+          <div class="header-main">
+            <h2>Group: Performance Overview</h2>
+            <div class="header-actions">
+              <button class="secondary">Rename</button>
+              <button class="secondary">Duplicate</button>
+              <button class="secondary">Share</button>
+              <button class="icon">⋮</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="group-body">
+          <nav class="views">
+            <div class="views-header">
+              <h3>Views</h3>
+              <button class="secondary">Reorder</button>
+            </div>
+            <ul>
+              <li class="view-item active">Reach</li>
+              <li class="view-item">Weekly Performance</li>
+              <li class="view-item">Budget vs Revenue</li>
+              <li class="view-item">Channel Breakdown</li>
+            </ul>
+            <div class="view-actions">
+              <div class="view-actions-title">Reach</div>
+              <button>Rename</button>
+              <button>Duplicate</button>
+              <button>Move to group…</button>
+              <button class="danger">Delete</button>
+            </div>
+            <div class="move-panel">
+              <h4>Move “Reach” to:</h4>
+              <label><input type="radio" name="group" checked /> Performance Overview</label>
+              <label><input type="radio" name="group" /> Awareness &amp; Reach</label>
+              <label><input type="radio" name="group" /> Ecommerce Deep Dive</label>
+              <button class="primary">Confirm</button>
+            </div>
+            <div class="reorder">
+              <h4>Reordering preview</h4>
+              <div class="drag-item">☰ Weekly Performance</div>
+              <div class="drag-item">☰ Reach</div>
+              <div class="drag-item">☰ Budget vs Revenue</div>
+              <div class="drag-item">☰ Channel Breakdown</div>
+            </div>
+          </nav>
+
+          <section class="view-content">
+            <div class="view-header">
+              <h3>Reach</h3>
+              <button class="icon">⋮</button>
+            </div>
+            <div class="cards">
+              <div class="card">
+                <h4>Audience Growth</h4>
+                <p>Summary of reach performance this week.</p>
+                <div class="metric">+12.4% WoW</div>
+              </div>
+              <div class="card">
+                <h4>Top Channels</h4>
+                <p>Highest reach by channel share.</p>
+                <div class="metric">Social · 38%</div>
+              </div>
+              <div class="card">
+                <h4>Weekly Targets</h4>
+                <p>Progress toward target audience coverage.</p>
+                <div class="metric">76% achieved</div>
+              </div>
+            </div>
+            <div class="table">
+              <div class="table-header">
+                <span>Channel</span>
+                <span>Reach</span>
+                <span>Change</span>
+              </div>
+              <div class="table-row">
+                <span>Paid Social</span>
+                <span>1.2M</span>
+                <span class="positive">▲ 9%</span>
+              </div>
+              <div class="table-row">
+                <span>Organic Search</span>
+                <span>860K</span>
+                <span class="positive">▲ 5%</span>
+              </div>
+              <div class="table-row">
+                <span>Display</span>
+                <span>640K</span>
+                <span class="negative">▼ 2%</span>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
