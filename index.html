@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reporting UI Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="badge">Reporting</span>
+          <h1>All groups</h1>
+          <button class="primary">+ New group</button>
+        </div>
+
+        <div class="group-table">
+          <div class="table-row table-header">
+            <span>Group name</span>
+            <span># Pages</span>
+            <span>Actions</span>
+          </div>
+          <div class="table-row">
+            <span>Performance</span>
+            <span>4</span>
+            <span class="action-links">Open · Rename · Duplicate · Share</span>
+          </div>
+          <div class="table-row">
+            <span>Awareness</span>
+            <span>3</span>
+            <span class="action-links">Open · Rename · Duplicate · Share</span>
+          </div>
+          <div class="table-row">
+            <span>Ecommerce</span>
+            <span>6</span>
+            <span class="action-links">Open · Rename · Duplicate · Share</span>
+          </div>
+        </div>
+
+        <div class="migration">
+          <h2>Entry behavior</h2>
+          <p>
+            Users land on the first group + first page to avoid empty screens. New
+            users get a default group with an empty page.
+          </p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="content-header">
+          <button class="ghost">← Back to All groups</button>
+          <div class="header-main">
+            <div>
+              <h2>Group: Performance</h2>
+              <div class="header-subtitle">Shared with Marketing · 4 pages</div>
+            </div>
+            <div class="header-actions">
+              <button class="secondary">Rename group</button>
+              <button class="secondary">Duplicate group</button>
+              <button class="secondary">Share group</button>
+              <button class="icon">⋮</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="group-body">
+          <nav class="views">
+            <div class="views-header">
+              <h3>Groups</h3>
+              <button class="secondary">Collapse all</button>
+            </div>
+            <div class="group-list">
+              <div class="group-block active">
+                <div class="group-row">
+                  <span class="caret">▶</span>
+                  <span>Performance</span>
+                  <span class="pill">Shared</span>
+                </div>
+                <ul>
+                  <li class="view-item active">Overview</li>
+                  <li class="view-item">Weekly</li>
+                  <li class="view-item">Channel split</li>
+                  <li class="add-item">+ Add page</li>
+                </ul>
+              </div>
+              <div class="group-block">
+                <div class="group-row">
+                  <span class="caret">▶</span>
+                  <span>Awareness</span>
+                </div>
+                <ul>
+                  <li class="view-item">Reach</li>
+                  <li class="view-item">Frequency</li>
+                  <li class="add-item">+ Add page</li>
+                </ul>
+              </div>
+              <div class="group-block partial">
+                <div class="group-row">
+                  <span class="caret">▶</span>
+                  <span>Ecommerce</span>
+                  <span class="pill muted">Partial</span>
+                </div>
+                <ul>
+                  <li class="view-item">Weekly performance</li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <section class="view-content">
+            <div class="view-header">
+              <div>
+                <h3>Overview</h3>
+                <div class="header-subtitle">Page actions · last updated today</div>
+              </div>
+              <button class="icon">⋮</button>
+            </div>
+
+            <div class="view-actions">
+              <button>Rename page</button>
+              <button>Duplicate page</button>
+              <button>Move to group…</button>
+              <button class="danger">Delete page</button>
+            </div>
+
+            <div class="empty-state">
+              <h4>This page is empty</h4>
+              <p>Add widgets to start building your report.</p>
+              <div class="empty-actions">
+                <button class="primary">Add widgets</button>
+                <button class="secondary">Rename page</button>
+              </div>
+            </div>
+
+            <div class="move-panel">
+              <h4>Move “Overview” to:</h4>
+              <label><input type="radio" name="group" checked /> Performance</label>
+              <label><input type="radio" name="group" /> Awareness</label>
+              <label><input type="radio" name="group" /> Ecommerce</label>
+              <button class="primary">Confirm</button>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
